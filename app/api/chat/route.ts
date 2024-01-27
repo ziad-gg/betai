@@ -38,10 +38,10 @@ const PromptErrorResponse = new Response(
 export async function GET(req: NextRequest) {
 
   const searchParams = req.nextUrl.searchParams;
-  const query = searchParams.get("model") || endpoints[0];
+  const query = searchParams.get("model");
   const query_prompt = searchParams.get("prompt");
 
-  if (!endpoints.includes(query)) return ModelErrorResponse;
+  if (!query || !endpoints.includes(query)) return ModelErrorResponse;
   if (!query_prompt) return PromptErrorResponse;
 
   const Request = await axios.post<TextResult>(
