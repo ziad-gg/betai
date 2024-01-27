@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import ModelComponent from "@/components/ModelComponent";
+import Message from "@/components/MessageComponent";
+import ChatGpt from "@/components/svgs/chatgpt";
 
 export const metadata: Metadata = {
   title: "betai (chat)",
@@ -27,7 +29,9 @@ export default function Home() {
       </div>
       <div className="min-h-screen overflow-y-scroll w-[80%] flex justify-center items-center p-10">
         <div className="min-w-full h-[80%] bg-black rounded-2xl flex flex-col p-2">
-          <div className="min-w-full flex-1"></div>
+          <div className="min-w-full flex-1 flex justify-center px-40">
+            <Message author="user" userImage={<ChatGpt />} content="Hello World" />
+          </div>
           <div className="min-w-full h-[20%] flex justify-center items-center">
             <textarea
               className="w-[70%] h-[3rem] p-4 bg-gray-800 text-white rounded-md outline-none resize-x-none no-scrollbar opacity-75 shadow-md shadow-gray-800 resize-y"

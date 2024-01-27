@@ -35,7 +35,7 @@ const PromptErrorResponse = new Response(
   }
 );
 
-export async function GET(req: NextRequest) {
+export async function POST(req: NextRequest) {
 
   const searchParams = req.nextUrl.searchParams;
   const query = searchParams.get("model");
